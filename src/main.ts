@@ -1,5 +1,3 @@
-async function main() {
-  console.log("Sistema Pokedex iniciado");
-}
+async function main() {}
 
 main();
