@@ -1,3 +1,3 @@
-export default async function deletarPokemon() {
+export async function deletarPokemon() {
   console.log("deletar pokemon");
 }
