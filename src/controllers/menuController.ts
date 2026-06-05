@@ -1,10 +1,10 @@
 import { stdin, stdout } from "node:process";
 import { createInterface } from "node:readline/promises";
-import adicionarPokemon from "../services/adicionarPokemon";
-import listarPokemon from "../services/listarPokemon";
-import deletarPokemon from "../services/deletarPokemon";
+import { adicionarPokemon } from "../services/adicionarPokemon";
+import { listarPokemon } from "../services/listarPokemon";
+import { deletarPokemon } from "../services/deletarPokemon";
 
-async function menuController() {
+export async function menuController() {
   const interfaceConsole = createInterface(stdin, stdout);
 
   let opcao: number;
@@ -15,7 +15,7 @@ async function menuController() {
         "1 - Adicionar Pokemon\n" +
         "2 - Listar Pokemons\n" +
         "3 - Deletar Pokemon da lista\n" +
-        "0 - Finalizar sistema\n",
+        "0 - Finalizar sistema\n\n",
     );
 
     opcao = Number(resposta);

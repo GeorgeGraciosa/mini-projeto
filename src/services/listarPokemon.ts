@@ -1,3 +1,3 @@
-export default async function listarPokemon() {
+export async function listarPokemon() {
   console.log("listar pokemon");
 }
