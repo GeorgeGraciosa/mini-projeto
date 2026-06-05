@@ -13,7 +13,7 @@ export class Validador {
     return typeof value === "number";
   }
 
-  static validade(value: unknown): PokemonResumo {
+  static validar(value: unknown): PokemonResumo {
     if (!this.isObject(value)) {
       throw new Error("Type error");
     }
