@@ -1,6 +1,7 @@
 import { lerLista } from "./lerLista";
 import { salvarLista } from "./salvarLista";
 import { PokemonResumo } from "../models/pokemonResumo";
+import { capitalize } from "../utils/capitalize";
 
 export async function deletarPokemon(pokemonId: string) {
   const listaBoxPokemon: PokemonResumo[] = await lerLista();
@@ -27,12 +28,12 @@ export async function deletarPokemon(pokemonId: string) {
 
   await salvarLista(listaAtualizada);
 
-  console.log(`${pokemonEncontrado.name} foi deletado da lista.\n`);
+  console.log(`${pokemonEncontrado.name} foi removido da lista.\n`);
   console.log(
     `Lista atualizada:`,
     listaAtualizada.map(
       (pokemon) =>
-        `ID: ${pokemon.id} - Nome: ${pokemon.name} - Tipo: ${pokemon.types.join(" / ")} - Altura: ${pokemon.height} - Peso: ${pokemon.weight}`,
+        `ID: ${pokemon.id} - Nome: ${capitalize(pokemon.name)} - Tipo: ${pokemon.types.map(capitalize).join(" / ")} - Altura: ${pokemon.height / 10} metros - Peso: ${pokemon.weight / 10} kg`,
     ),
     "\n",
   );
