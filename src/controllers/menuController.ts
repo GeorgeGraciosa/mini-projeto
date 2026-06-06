@@ -24,7 +24,7 @@ export async function menuController() {
     opcao = Number(resposta);
 
     if (Number.isNaN(opcao)) {
-      console.log("Opção inválida! Digite apenas números.");
+      console.log("[AVISO] Opção inválida! Digite apenas números.");
       continue;
     }
 
@@ -54,7 +54,9 @@ export async function menuController() {
         console.log("Finalizando sistema...");
         break;
       default:
-        console.log("Opção inválida, tente digitar uma das opções disponíveis");
+        console.log(
+          "[AVISO] Opção inválida, tente digitar uma das opções disponíveis",
+        );
         break;
     }
   } while (opcao != 0);

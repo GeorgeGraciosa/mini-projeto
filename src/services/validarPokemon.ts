@@ -13,16 +13,16 @@ export async function validarPokemon(
       case 200:
         return Validador.validar(await resposta.json());
       case 400:
-        throw new Error("Requisição inválida");
+        throw new Error("[ERRO] Requisição inválida");
       case 404:
-        throw new Error(`Pokémon ${pokemon} não encontrado na API`);
+        throw new Error(`[ERRO] Pokémon ${pokemon} não encontrado na API`);
       default:
         throw new Error(
-          `Não foi possível buscar o pokémon na API ${resposta.status} ${resposta.statusText}`,
+          `[ERRO] Não foi possível buscar o pokémon na API ${resposta.status} ${resposta.statusText}`,
         );
     }
   } catch (error) {
-    console.log("Falha pela busca do pokémon na API");
+    console.log("[ERRO] Falha pela busca do pokémon na API");
     return null;
   }
 }

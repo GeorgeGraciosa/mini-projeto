@@ -10,7 +10,7 @@ export async function adicionarPokemon(pokemon: string) {
   const pokemonEncontrado = await validarPokemon(pokemon);
 
   if (pokemonEncontrado === null) {
-    console.log("Pokémon não encontrado");
+    console.log("[ERRO] Pokémon não encontrado");
     return;
   }
 
@@ -20,7 +20,7 @@ export async function adicionarPokemon(pokemon: string) {
     })
   ) {
     console.log(
-      "Não foi possível adicionar porque este Pokémon já existe na lista.",
+      "[AVISO] Não foi possível adicionar porque este Pokémon já existe na lista.",
     );
     return;
   }
@@ -42,6 +42,6 @@ export async function adicionarPokemon(pokemon: string) {
         `Speed: ${pokemonEncontrado.speed}\n`,
     );
   } catch (error) {
-    console.error("Erro ao salvar o pokémon na database.");
+    console.error("[ERRO] Erro ao salvar o pokémon na database.");
   }
 }

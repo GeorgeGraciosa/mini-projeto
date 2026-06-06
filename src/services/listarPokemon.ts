@@ -13,5 +13,5 @@ export async function listarPokemon() {
       "\n",
     );
   }
-  if (listaBoxPokemon.length === 0) console.log("A box está vazia.\n");
+  if (listaBoxPokemon.length === 0) console.log("[AVISO] A box está vazia.\n");
 }

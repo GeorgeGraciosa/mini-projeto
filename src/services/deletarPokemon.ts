@@ -9,7 +9,7 @@ export async function deletarPokemon(pokemonId: string) {
   const id = Number(pokemonId);
 
   if (Number.isNaN(id)) {
-    console.log("ID inválido");
+    console.log("[AVISO] ID inválido");
     return;
   }
 
@@ -18,7 +18,7 @@ export async function deletarPokemon(pokemonId: string) {
   );
 
   if (!pokemonEncontrado) {
-    console.log("Pokémon não encontrado na lista.");
+    console.log("[ERRO] Pokémon não encontrado na lista.");
     return;
   }
 
