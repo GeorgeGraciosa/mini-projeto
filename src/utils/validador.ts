@@ -26,6 +26,30 @@ export class Validador {
       throw new Error("Type error");
     }
 
+    if (!("height" in value)) {
+      throw new Error("Type error");
+    }
+
+    if (!("weight" in value)) {
+      throw new Error("Type error");
+    }
+
+    if (!("types" in value)) {
+      throw new Error("Type error");
+    }
+
+    if (!("stats" in value)) {
+      throw new Error("Type error");
+    }
+
+    if (!Array.isArray(value.types)) {
+      throw new Error("Type error");
+    }
+
+    if (!Array.isArray(value.stats)) {
+      throw new Error("Type error");
+    }
+
     if (!this.isString(value.name)) {
       throw new Error("Type error");
     }
@@ -34,16 +58,34 @@ export class Validador {
       throw new Error("Type error");
     }
 
+    if (!this.isNumber(value.height)) {
+      throw new Error("Type error");
+    }
+
+    if (!this.isNumber(value.weight)) {
+      throw new Error("Type error");
+    }
+
     return {
       id: value.id,
       name: value.name,
-      types: [],
-      hp: 0,
-      attack: 0,
-      spAttack: 0,
-      defense: 0,
-      spDefense: 0,
-      speed: 0,
+      types: value.types.map((item) => item.type.name),
+      height: value.height,
+      weight: value.weight,
+      hp: value.stats.find((item) => item.stat.name === "hp")?.base_stat ?? 0,
+      attack:
+        value.stats.find((item) => item.stat.name === "attack")?.base_stat ?? 0,
+      spAttack:
+        value.stats.find((item) => item.stat.name === "special-attack")
+          ?.base_stat ?? 0,
+      defense:
+        value.stats.find((item) => item.stat.name === "defense")?.base_stat ??
+        0,
+      spDefense:
+        value.stats.find((item) => item.stat.name === "special-defense")
+          ?.base_stat ?? 0,
+      speed:
+        value.stats.find((item) => item.stat.name === "speed")?.base_stat ?? 0,
     };
   }
 }
