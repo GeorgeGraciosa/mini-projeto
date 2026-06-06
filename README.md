@@ -201,6 +201,3 @@ npm run lint
 * Prettier
 * PokeAPI
 * File System (fs/promises)
-
-```
-```
