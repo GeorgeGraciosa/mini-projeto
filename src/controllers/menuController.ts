@@ -1,8 +1,9 @@
 import { stdin, stdout } from "node:process";
 import { createInterface } from "node:readline/promises";
+
 import { adicionarPokemon } from "../services/adicionarPokemon";
-import { listarPokemon } from "../services/listarPokemon";
 import { deletarPokemon } from "../services/deletarPokemon";
+import { listarPokemon } from "../services/listarPokemon";
 
 export async function menuController() {
   const interfaceConsole = createInterface(stdin, stdout);

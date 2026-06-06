@@ -1,4 +1,5 @@
 import { writeFile } from "node:fs/promises";
+
 import { PokemonResumo } from "../models/pokemonResumo";
 
 export async function salvarLista(pokemons: PokemonResumo[]) {
