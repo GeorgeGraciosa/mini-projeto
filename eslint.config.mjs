@@ -1,8 +1,8 @@
-import eslint from '@eslint/js';
-import { defineConfig } from 'eslint/config';
-import eslintPluginImport from 'eslint-plugin-import';
-import prettierPlugin from 'eslint-plugin-prettier';
-import tseslint from 'typescript-eslint';
+import eslint from "@eslint/js";
+import { defineConfig } from "eslint/config";
+import eslintPluginImport from "eslint-plugin-import";
+import prettierPlugin from "eslint-plugin-prettier";
+import tseslint from "typescript-eslint";
 
 const config = defineConfig(
   eslint.configs.recommended,
@@ -12,11 +12,11 @@ const config = defineConfig(
     languageOptions: {
       parserOptions: {
         projectService: {
-          allowDefaultProject: ['*.js']
+          allowDefaultProject: ["*.js"],
         },
         tsconfigRootDir: import.meta.dirname,
       },
-      sourceType: 'module',
+      sourceType: "module",
       globals: {
         node: true,
       },
@@ -28,9 +28,9 @@ const config = defineConfig(
     },
 
     settings: {
-      'import/resolver': {
+      "import/resolver": {
         node: {
-          extensions: ['.js', '.jsx', '.ts', '.tsx'],
+          extensions: [".js", ".jsx", ".ts", ".tsx"],
         },
       },
     },
@@ -40,33 +40,33 @@ const config = defineConfig(
       ...eslintPluginImport.configs.recommended.rules,
       ...eslintPluginImport.configs.typescript.rules,
 
-      '@typescript-eslint/no-extraneous-class': ['off'],
-      '@typescript-eslint/interface-name-prefix': 'off',
-      'import/no-absolute-path': 'error',
-      '@typescript-eslint/no-explicit-any': 'off',
-      'lines-between-class-members': ['error', 'always'],
-      '@typescript-eslint/no-unused-vars': [
-        'error',
+      "@typescript-eslint/no-extraneous-class": ["off"],
+      "@typescript-eslint/interface-name-prefix": "off",
+      "import/no-absolute-path": "error",
+      "@typescript-eslint/no-explicit-any": "off",
+      "lines-between-class-members": ["error", "always"],
+      "@typescript-eslint/no-unused-vars": [
+        "error",
         {
-          argsIgnorePattern: '_',
-          varsIgnorePattern: '_',
-          caughtErrorsIgnorePattern: '_',
+          argsIgnorePattern: "_",
+          varsIgnorePattern: "_",
+          caughtErrorsIgnorePattern: "_",
         },
       ],
-      'import/no-unresolved': 'off',
-      'import/named': 'off',
-      'import/order': [
-        'error',
+      "import/no-unresolved": "off",
+      "import/named": "off",
+      "import/order": [
+        "error",
         {
           groups: [
-            'builtin',
-            'external',
-            'internal',
-            ['parent', 'sibling', 'index'],
+            "builtin",
+            "external",
+            "internal",
+            ["parent", "sibling", "index"],
           ],
-          'newlines-between': 'always',
+          "newlines-between": "always",
           alphabetize: {
-            order: 'asc',
+            order: "asc",
             caseInsensitive: true,
           },
         },
