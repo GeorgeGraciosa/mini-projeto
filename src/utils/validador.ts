@@ -19,51 +19,51 @@ export class Validador {
     }
 
     if (!("name" in value)) {
-      throw new Error("Type error");
+      throw new Error("[ERRO] Type error");
     }
 
     if (!("id" in value)) {
-      throw new Error("Type error");
+      throw new Error("[ERRO] Type error");
     }
 
     if (!("height" in value)) {
-      throw new Error("Type error");
+      throw new Error("[ERRO] Type error");
     }
 
     if (!("weight" in value)) {
-      throw new Error("Type error");
+      throw new Error("[ERRO] Type error");
     }
 
     if (!("types" in value)) {
-      throw new Error("Type error");
+      throw new Error("[ERRO] Type error");
     }
 
     if (!("stats" in value)) {
-      throw new Error("Type error");
+      throw new Error("[ERRO] Type error");
     }
 
     if (!Array.isArray(value.types)) {
-      throw new Error("Type error");
+      throw new Error("[ERRO] Type error");
     }
 
     if (!Array.isArray(value.stats)) {
-      throw new Error("Type error");
+      throw new Error("[ERRO] Type error");
     }
 
     if (!this.isString(value.name)) {
-      throw new Error("Type error");
+      throw new Error("[ERRO] Type error");
     }
 
     if (!this.isNumber(value.id)) {
-      throw new Error("Type error");
+      throw new Error("[ERRO] Type error");
     }
 
     if (!this.isNumber(value.height)) {
-      throw new Error("Type error");
+      throw new Error("[ERRO] Type error");
     }
 
     if (!this.isNumber(value.weight)) {
-      throw new Error("Type error");
+      throw new Error("[ERRO] Type error");
     }
 
     return {
