@@ -7,5 +7,6 @@ export async function listarPokemon() {
     listaBoxPokemon.map((pokemon) => {
       return `ID: ${pokemon.id} - Nome: ${pokemon.name} - Tipo: ${pokemon.types.join(" / ")} - Altura: ${pokemon.height} - Peso: ${pokemon.weight}`;
     }),
+    "\n",
   );
 }
