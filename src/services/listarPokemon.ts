@@ -1,5 +1,6 @@
 import { lerLista } from "./lerLista";
 import { PokemonResumo } from "../models/pokemonResumo";
+import { capitalize } from "../utils/capitalize";
 
 export async function listarPokemon() {
   const listaBoxPokemon: PokemonResumo[] = await lerLista();
@@ -7,7 +8,7 @@ export async function listarPokemon() {
   if (listaBoxPokemon.length > 0) {
     console.log(
       listaBoxPokemon.map((pokemon) => {
-        return `ID: ${pokemon.id} - Nome: ${pokemon.name} - Tipo: ${pokemon.types.join(" / ")} - Altura: ${pokemon.height} - Peso: ${pokemon.weight}`;
+        return `ID: ${pokemon.id} - Nome: ${capitalize(pokemon.name)} - Tipo: ${pokemon.types.map(capitalize).join(" / ")} - Altura: ${pokemon.height / 10} metros - Peso: ${pokemon.weight / 10} kg`;
       }),
       "\n",
     );

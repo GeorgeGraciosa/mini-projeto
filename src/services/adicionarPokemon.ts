@@ -2,6 +2,7 @@ import { lerLista } from "./lerLista";
 import { salvarLista } from "./salvarLista";
 import { validarPokemon } from "./validarPokemon";
 import { PokemonResumo } from "../models/pokemonResumo";
+import { capitalize } from "../utils/capitalize";
 
 export async function adicionarPokemon(pokemon: string) {
   const pokemons: PokemonResumo[] = (await lerLista()) || [];
@@ -29,11 +30,11 @@ export async function adicionarPokemon(pokemon: string) {
   try {
     await salvarLista(pokemons);
     console.log(
-      `${pokemonEncontrado.name} foi adicionado à box!\n` +
+      `${capitalize(pokemonEncontrado.name)} foi adicionado à box!\n` +
         `Dados: \n` +
-        `Tipo: ${pokemonEncontrado.types.join(" / ")}\n` +
-        `Altura: ${pokemonEncontrado.height}\n` +
-        `Peso: ${pokemonEncontrado.weight}\n` +
+        `Tipo: ${pokemonEncontrado.types.map(capitalize).join(" / ")}\n` +
+        `Altura: ${pokemonEncontrado.height / 10} metros\n` +
+        `Peso: ${pokemonEncontrado.weight / 10} kg\n` +
         `Attack: ${pokemonEncontrado.attack}\n` +
         `Special Attack: ${pokemonEncontrado.spAttack}\n` +
         `Defense: ${pokemonEncontrado.defense}\n` +
