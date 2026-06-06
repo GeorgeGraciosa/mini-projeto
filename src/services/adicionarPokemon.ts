@@ -31,7 +31,9 @@ export async function adicionarPokemon(pokemon: string) {
     console.log(
       `${pokemonEncontrado.name} foi adicionado à box!\n` +
         `Dados: \n` +
-        `Tipo: ${pokemonEncontrado.types.join(", ")}\n` +
+        `Tipo: ${pokemonEncontrado.types.join(" / ")}\n` +
+        `Altura: ${pokemonEncontrado.height}\n` +
+        `Peso: ${pokemonEncontrado.weight}\n` +
         `Attack: ${pokemonEncontrado.attack}\n` +
         `Special Attack: ${pokemonEncontrado.spAttack}\n` +
         `Defense: ${pokemonEncontrado.defense}\n` +
