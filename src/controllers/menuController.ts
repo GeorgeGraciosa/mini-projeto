@@ -27,16 +27,19 @@ export async function menuController() {
 
     switch (opcao) {
       case 1:
-        const pokemonAdicionado = await interfaceConsole.question(
+        const pokemonInput = await interfaceConsole.question(
           "Digite o nome ou número do pokémon a ser adicionado:\n",
         );
-        await adicionarPokemon(pokemonAdicionado.trim().toLowerCase());
+        await adicionarPokemon(pokemonInput.trim().toLowerCase());
         break;
       case 2:
         await listarPokemon();
         break;
       case 3:
-        await deletarPokemon();
+        const pokemonId = await interfaceConsole.question(
+          "Digite o Id do pokémon a ser deletado da lista:\n",
+        );
+        await deletarPokemon(pokemonId);
         break;
       case 0:
         console.log("Finalizando sistema...");
