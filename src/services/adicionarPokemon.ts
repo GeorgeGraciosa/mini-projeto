@@ -1,7 +1,7 @@
-import { PokemonResumo } from "../models/pokemonResumo";
 import { lerLista } from "./lerLista";
-import { validarPokemon } from "./validarPokemon";
 import { salvarLista } from "./salvarLista";
+import { validarPokemon } from "./validarPokemon";
+import { PokemonResumo } from "../models/pokemonResumo";
 
 export async function adicionarPokemon(pokemon: string) {
   const pokemons: PokemonResumo[] = (await lerLista()) || [];

@@ -1,6 +1,6 @@
-import { PokemonResumo } from "../models/pokemonResumo";
 import { lerLista } from "./lerLista";
 import { salvarLista } from "./salvarLista";
+import { PokemonResumo } from "../models/pokemonResumo";
 
 export async function deletarPokemon(pokemonId: string) {
   const listaBoxPokemon: PokemonResumo[] = await lerLista();
